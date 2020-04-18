@@ -19,7 +19,7 @@ namespace anagramStrings
 
             /* function to check whether two strings 
             are anagram of each other */
-            static bool areAnagram(char[] str1, char[] str2)
+            bool areAnagram(char[] str1, char[] str2)
             {
                 // Create 2 count arrays and initialize 
                 // all values as 0 
@@ -44,7 +44,7 @@ namespace anagramStrings
                     return false;
 
                 // Compare count arrays 
-                for (i = 0; i < 7; i++)
+                for (i = 0; i < 256; i++)
                     if (count1[i] != count2[i])
                         return false;
 
@@ -54,7 +54,7 @@ namespace anagramStrings
             /* Driver program to test to print printDups*/
            
                 char[] str1 = ("listen").ToCharArray();
-                char[] str2 = ("silent").ToCharArray();
+                char[] str2 = ("zilent").ToCharArray();
 
                 if (areAnagram(str1, str2))
                     Console.WriteLine("The two strings ARE "
