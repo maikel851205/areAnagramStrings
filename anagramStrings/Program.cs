@@ -21,7 +21,7 @@ namespace anagramStrings
             are anagram of each other */
             bool areAnagram(char[] str1, char[] str2)
             {
-                // Create 2 count arrays and initialize 
+                // Create a count arrays and initialize 
                 // all values as 0 
                 int[] count1 = new int[256];
 
@@ -43,7 +43,9 @@ namespace anagramStrings
                 }
 
                 // como ya en el primer ciclo count1 tiene la cantidad de veces que se repiten 
-                // cada caracter ahora vamos a restar cada ves que tengamos ese caracter
+                // cada caracter ahora vamos a restar cada ves que tengamos ese caracter.
+                // dos arreglos diferentes de la misma logitud y con los caracteres repetidos
+                // la misma cantidad de veces es anagrma 
 
                 for (int i = 0; i < str2.Length; i++)
                 {
