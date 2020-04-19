@@ -2,14 +2,14 @@
 
 namespace anagramStrings
 {
-    
+
     //     Anagram words
 
     //    listen --- silent
 
     //    triangle --- integral
-    
-    
+
+
     class Program
     {
         static void Main()
@@ -24,32 +24,44 @@ namespace anagramStrings
                 // Create 2 count arrays and initialize 
                 // all values as 0 
                 int[] count1 = new int[256];
-                int[] count2 = new int[256];
-                int i;
-
-                // For each character in input strings, 
-                // increment count in the corresponding 
-                // count array 
-                for (i = 0; i < str1.Length && i < str2.Length;
-                     i++)
-                {
-                    count1[str1[i]]++;
-                    count2[str2[i]]++;
-                }
 
                 // If both strings are of different length. 
                 // Removing this condition will make the program 
                 // fail for strings like "aaca" and "aca" 
+
                 if (str1.Length != str2.Length)
                     return false;
 
-                // Compare count arrays 
-                for (i = 0; i < 256; i++)
-                    if (count1[i] != count2[i])
+                // For each character in input strings, 
+                // increment count in the corresponding 
+                // count array
+                // cuenta la cantidad de veces que se repite un caracter determinado en str1.
+                // y guarda esa contidad en el contador count1
+                for (int i = 0; i < str1.Length; i++)
+                {
+                    count1[str1[i]]++;
+                }
+
+                // como ya en el primer ciclo count1 tiene la cantidad de veces que se repiten 
+                // cada caracter ahora vamos a restar cada ves que tengamos ese caracter
+
+                for (int i = 0; i < str2.Length; i++)
+                {
+                    count1[str2[i]]--;
+                }
+
+                //
+
+                for (int i = 0; i < count1.Length; i++)
+                {
+                    if (count1[i] != 0)
                         return false;
+                }
 
                 return true;
             }
+
+
 
             /* Driver program to test to print printDups*/
            
@@ -66,7 +78,7 @@ namespace anagramStrings
             
         }
 
-        // This code contributed by 29AjayKumar 
+        
 
 
 
